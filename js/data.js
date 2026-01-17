@@ -1,60 +1,61 @@
-function getAQIData() {
-    const city = document.getElementById("cityInput").value.trim();
-    const resultBox = document.getElementById("aqiResult");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Environmental Data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-    if (!city) {
-        alert("Please enter a city name");
-        return;
-    }
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">EVS Project</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About EVS</a></li>
+        <li><a href="air.html">Air</a></li>
+        <li><a href="water.html">Water</a></li>
+        <li><a href="soil.html">Soil</a></li>
+        <li><a href="noise.html">Noise</a></li>
+        <li><a href="data.html" class="active">Live Data</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+</nav>
 
-    resultBox.innerText = "Fetching AQI data...";
+<!-- ================= CONTENT ================= -->
+<section class="content">
+    <h2>Live Environmental Data</h2>
+    <p>
+        This section displays real-time environmental data using public APIs.
+        The data helps in understanding current air quality conditions in
+        different cities across the world.
+    </p>
 
-    fetch(`https://api.waqi.info/feed/${city}/?token=d5bf0ab0a5163f50c07762966acdfc6542654ae0`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "ok") {
-                const aqi = data.data.aqi;
-                const station = data.data.city.name;
-                const apiTime = data.data.time.s;
-                const fetchTime = new Date().toLocaleString();
+    <!-- AQI CARD -->
+    <div class="card">
+        <h3>Live Air Quality Index (AQI)</h3>
 
-                // AQI category & color
-                let category = "";
-                let color = "";
+        <input type="text" id="cityInput" placeholder="Enter city name (e.g., Delhi)">
+        <button onclick="getAQIData()">Get AQI</button>
 
-                if (aqi <= 50) {
-                    category = "Good";
-                    color = "#2ecc71";
-                } else if (aqi <= 100) {
-                    category = "Moderate";
-                    color = "#f1c40f";
-                } else if (aqi <= 200) {
-                    category = "Poor";
-                    color = "#e67e22";
-                } else if (aqi <= 300) {
-                    category = "Very Poor";
-                    color = "#e74c3c";
-                } else {
-                    category = "Severe";
-                    color = "#8e44ad";
-                }
+        <p id="aqiResult">AQI data will appear here</p>
+    </div>
 
-                resultBox.innerHTML = `
-                    <strong>City:</strong> ${city}<br>
-                    <strong>AQI:</strong>
-                    <span style="color:${color}; font-weight:bold;">
-                        ${aqi} (${category})
-                    </span><br>
-                    <strong>Station:</strong> ${station}<br>
-                    <strong>Data fetched on:</strong> ${fetchTime}<br>
-                    <small>Station last updated: ${apiTime}</small>
-                `;
-            } else {
-                resultBox.innerText = "AQI data not available for this city.";
-            }
-        })
-        .catch(error => {
-            resultBox.innerText =
-                "Error fetching AQI data. Please check your internet connection.";
-        });
-}
+    <!-- NOTE FOR CLARITY -->
+    <p style="margin-top:15px; font-size:14px; color:#555;">
+        <em>
+            Note: AQI values may vary across platforms due to different monitoring
+            stations, update intervals, and AQI standards.
+        </em>
+    </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 EVS Project | BSc Computer Science</p>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/data.js"></script>
+</body>
+</html>
