@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ========== NAVBAR ========== -->
 <nav class="navbar">
     <div class="logo">EVS Project</div>
     <ul class="nav-links">
@@ -22,13 +22,14 @@
     </ul>
 </nav>
 
-<!-- ================= CONTENT ================= -->
+<!-- ========== MAIN CONTENT ========== -->
 <section class="content">
     <h2>Live Environmental Data</h2>
+
     <p>
-        This section displays real-time environmental data using public APIs.
-        The data helps in understanding current air quality conditions in
-        different cities across the world.
+        This section displays real-time environmental information using public
+        APIs. The data helps in understanding current air quality conditions
+        across different cities.
     </p>
 
     <!-- AQI CARD -->
@@ -39,32 +40,33 @@
         <button onclick="getAQIData()">Get AQI</button>
 
         <p id="aqiResult">AQI data will appear here</p>
+
+        <!-- AQI LEGEND -->
+        <p style="margin-top:10px; font-size:14px;">
+            <strong>AQI Scale:</strong><br>
+            <span style="color:#2ecc71;">● Good (0–50)</span><br>
+            <span style="color:#f1c40f;">● Moderate (51–100)</span><br>
+            <span style="color:#e67e22;">● Poor (101–200)</span><br>
+            <span style="color:#e74c3c;">● Very Poor (201–300)</span><br>
+            <span style="color:#8e44ad;">● Severe (301+)</span>
+        </p>
     </div>
 
-    <!-- NOTE FOR CLARITY -->
+    <!-- NOTE -->
     <p style="margin-top:15px; font-size:14px; color:#555;">
         <em>
-            Note: AQI values may vary across platforms due to different monitoring
+            Note: AQI values may vary between platforms due to different monitoring
             stations, update intervals, and AQI standards.
-            <p style="font-size:14px; margin-top:10px;">
-    <strong>AQI Scale:</strong>
-    Good (0–50),
-    Moderate (51–100),
-    Poor (101–200),
-    Very Poor (201–300),
-    Severe (301+)
-</p>
-
         </em>
     </p>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
     <p>© 2026 EVS Project | BSc Computer Science</p>
 </footer>
 
-<!-- ================= SCRIPTS ================= -->
+<!-- ========== SCRIPT ========== -->
 <script src="js/data.js"></script>
 </body>
 </html>
