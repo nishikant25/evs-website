@@ -1,37 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>EVS Live Information</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <h1>EVS Environmental Systems</h1>
-    <p>Live Environmental Information Across the World</p>
-</header>
-
 <section>
+
+    <div class="card">
+        <h2>🔍 Search City</h2>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getData()">Get Data</button>
+    </div>
+
     <div class="card">
         <h2>🌍 Air Quality Index (AQI)</h2>
-        <p id="aqi">Loading AQI...</p>
+        <p id="aqi">---</p>
     </div>
 
     <div class="card">
         <h2>🌡️ Temperature</h2>
-        <p id="temp">Loading temperature...</p>
+        <p id="temp">---</p>
     </div>
 
     <div class="card">
         <h2>💧 Humidity</h2>
-        <p id="humidity">Loading humidity...</p>
+        <p id="humidity">---</p>
     </div>
+
 </section>
-
-<footer>
-    <p>© 2026 EVS Live Website | Student Project</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
