@@ -9,7 +9,7 @@ function getAQIData() {
 
     resultBox.innerText = "Fetching AQI data...";
 
-    fetch(`https://api.waqi.info/feed/${city}/?token=YOUR_API_TOKEN`)
+    fetch(`https://api.waqi.info/feed/${city}/?token=d5bf0ab0a5163f50c07762966acdfc6542654ae0`)
         .then(response => response.json())
         .then(data => {
             if (data.status === "ok") {
