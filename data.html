@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
 <nav class="navbar">
     <div class="logo">EVS Project</div>
     <ul class="nav-links">
@@ -18,21 +17,12 @@
         <li><a href="soil.html">Soil</a></li>
         <li><a href="noise.html">Noise</a></li>
         <li><a href="data.html" class="active">Live Data</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
     </ul>
 </nav>
 
-<!-- ========== MAIN CONTENT ========== -->
 <section class="content">
     <h2>Live Environmental Data</h2>
 
-    <p>
-        This section displays real-time environmental information using public
-        APIs. The data helps in understanding current air quality conditions
-        across different cities.
-    </p>
-
-    <!-- AQI CARD -->
     <div class="card">
         <h3>Live Air Quality Index (AQI)</h3>
 
@@ -40,33 +30,13 @@
         <button onclick="getAQIData()">Get AQI</button>
 
         <p id="aqiResult">AQI data will appear here</p>
-
-        <!-- AQI LEGEND -->
-        <p style="margin-top:10px; font-size:14px;">
-            <strong>AQI Scale:</strong><br>
-            <span style="color:#2ecc71;">● Good (0–50)</span><br>
-            <span style="color:#f1c40f;">● Moderate (51–100)</span><br>
-            <span style="color:#e67e22;">● Poor (101–200)</span><br>
-            <span style="color:#e74c3c;">● Very Poor (201–300)</span><br>
-            <span style="color:#8e44ad;">● Severe (301+)</span>
-        </p>
     </div>
-
-    <!-- NOTE -->
-    <p style="margin-top:15px; font-size:14px; color:#555;">
-        <em>
-            Note: AQI values may vary between platforms due to different monitoring
-            stations, update intervals, and AQI standards.
-        </em>
-    </p>
 </section>
 
-<!-- ========== FOOTER ========== -->
 <footer class="footer">
     <p>© 2026 EVS Project | BSc Computer Science</p>
 </footer>
 
-<!-- ========== SCRIPT ========== -->
 <script src="js/data.js"></script>
 </body>
 </html>
