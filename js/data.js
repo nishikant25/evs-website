@@ -1,61 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Live Environmental Data</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+function getAQIData() {
+    const city = document.getElementById("cityInput").value.trim();
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-    <div class="logo">EVS Project</div>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About EVS</a></li>
-        <li><a href="air.html">Air</a></li>
-        <li><a href="water.html">Water</a></li>
-        <li><a href="soil.html">Soil</a></li>
-        <li><a href="noise.html">Noise</a></li>
-        <li><a href="data.html" class="active">Live Data</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-    </ul>
-</nav>
+    if (!city) {
+        alert("Please enter a city name");
+        return;
+    }
 
-<!-- ================= CONTENT ================= -->
-<section class="content">
-    <h2>Live Environmental Data</h2>
-    <p>
-        This section displays real-time environmental data using public APIs.
-        The data helps in understanding current air quality conditions in
-        different cities across the world.
-    </p>
+    const resultBox = document.getElementById("aqiResult");
+    resultBox.innerText = "Fetching AQI data...";
 
-    <!-- AQI CARD -->
-    <div class="card">
-        <h3>Live Air Quality Index (AQI)</h3>
+    fetch(`https://api.waqi.info/feed/${city}/?token=YOUR_API_TOKEN`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === "ok") {
+                const aqi = data.data.aqi;
+                const station = data.data.city.name;
+                const apiTime = data.data.time.s;
+                const fetchTime = new Date().toLocaleString();
 
-        <input type="text" id="cityInput" placeholder="Enter city name (e.g., Delhi)">
-        <button onclick="getAQIData()">Get AQI</button>
-
-        <p id="aqiResult">AQI data will appear here</p>
-    </div>
-
-    <!-- NOTE FOR CLARITY -->
-    <p style="margin-top:15px; font-size:14px; color:#555;">
-        <em>
-            Note: AQI values may vary across platforms due to different monitoring
-            stations, update intervals, and AQI standards.
-        </em>
-    </p>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-    <p>© 2026 EVS Project | BSc Computer Science</p>
-</footer>
-
-<!-- ================= SCRIPTS ================= -->
-<script src="js/data.js"></script>
-</body>
-</html>
+                resultBox.innerHTML = `
+                    <strong>City:</strong> ${city}<br>
+                    <strong>AQI:</strong> ${aqi}<br>
+                    <strong>Station:</strong> ${station}<br>
+                    <strong>Fetched at:</strong> ${fetchTime}<br>
+                    <small>Station last updated: ${apiTime}</small>
+                `;
+            } else {
+                resultBox.innerText = "AQI data not available.";
+            }
+        })
+        .catch(() => {
+            resultBox.innerText = "Error fetching AQI data.";
+        });
+}
