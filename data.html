@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Environmental Data</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">EVS Project</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About EVS</a></li>
+        <li><a href="air.html">Air</a></li>
+        <li><a href="water.html">Water</a></li>
+        <li><a href="soil.html">Soil</a></li>
+        <li><a href="noise.html">Noise</a></li>
+        <li><a href="data.html" class="active">Live Data</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+    </ul>
+</nav>
+
+<!-- ================= CONTENT ================= -->
+<section class="content">
+    <h2>Live Environmental Data</h2>
+    <p>
+        This section displays real-time environmental data using public APIs.
+        The data helps in understanding current air quality conditions in
+        different cities across the world.
+    </p>
+
+    <!-- AQI CARD -->
+    <div class="card">
+        <h3>Live Air Quality Index (AQI)</h3>
+
+        <input type="text" id="cityInput" placeholder="Enter city name (e.g., Delhi)">
+        <button onclick="getAQIData()">Get AQI</button>
+
+        <p id="aqiResult">AQI data will appear here</p>
+    </div>
+
+    <!-- NOTE FOR CLARITY -->
+    <p style="margin-top:15px; font-size:14px; color:#555;">
+        <em>
+            Note: AQI values may vary across platforms due to different monitoring
+            stations, update intervals, and AQI standards.
+        </em>
+    </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 EVS Project | BSc Computer Science</p>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/data.js"></script>
+</body>
+</html>
