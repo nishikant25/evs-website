@@ -118,4 +118,40 @@ input {
 .content h3 {
     margin-top: 20px;
 }
+/* Big hero section */
+.hero-large {
+    background-color: #f0f8ff;
+    padding: 50px 30px;
+    text-align: center;
+    border-bottom: 3px solid #0b5ed7;
+}
+
+.hero-large h1 {
+    font-size: 32px;
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+.hero-large p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Larger content spacing */
+.content h2,
+.content h3 {
+    margin-top: 25px;
+    color: #0b5ed7;
+}
+
+.content p,
+.content ul {
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.content ul li {
+    margin-bottom: 8px;
+}
+
 
