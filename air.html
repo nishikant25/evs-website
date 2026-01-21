@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">EVS Project</div>
     <ul class="nav-links">
@@ -16,31 +17,45 @@
         <li><a href="water.html">Water</a></li>
         <li><a href="soil.html">Soil</a></li>
         <li><a href="noise.html">Noise</a></li>
-        <li><a href="data.html">Live Data</a></li>
         <li><a href="pollution.html">Pollution</a></li>
+        <li><a href="data.html">Live Data</a></li>
     </ul>
 </nav>
 
-<section class="content">
-    <h2>Air Pollution</h2>
-
+<!-- HERO SECTION -->
+<section class="hero-large">
+    <h1>Air Pollution</h1>
     <p>
-        Air pollution is caused by harmful gases, dust, and smoke released into
-        the atmosphere, affecting human health and the environment.
-        Climate pollution is harming Western communities.
-Climate pollution threatens our health, our economy, and our environment. It drives temperature increases, catastrophic wildfires, drought and flooding and has made our communities and the people who live there more vulnerable to the health impacts of air pollution. Climate change worsens summertime ozone levels in major urban areas around the West and leads to massive emissions of fine particulate matter from wildfires. Science tells us that exposure to these air pollutants, even at relatively low levels, seriously compromises our health.
+        Understanding air quality, climate impacts, and health risks.
     </p>
+</section>
 
-    <h3>Live Air Quality Index (AQI)</h3>
+<!-- CONTENT -->
+<section class="content">
 
     <div class="card">
+        <h3>Overview</h3>
+        <p>
+            Air pollution is caused by harmful gases, dust, and smoke released into
+            the atmosphere, affecting human health and the environment.
+            Climate pollution threatens our health, economy, and ecosystems.
+            It drives temperature increases, wildfires, drought, and flooding.
+            Exposure to air pollutants seriously compromises human health.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Live Air Quality Index (AQI)</h3>
+
         <input type="text" id="cityInput" placeholder="Enter city name (e.g., Delhi)">
         <button onclick="getAQIData()">Get AQI</button>
 
         <p id="aqiResult">AQI data will appear here</p>
     </div>
+
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
     <p>© 2026 EVS Project | BSc Computer Science</p>
 </footer>
