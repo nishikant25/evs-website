@@ -160,6 +160,14 @@ button:hover {
     text-align: center;
     border-bottom: 3px solid #0b5ed7;
 }
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
 
 .hero-large h1 {
     font-size: 42px;
