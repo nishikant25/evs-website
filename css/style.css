@@ -2,25 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-    background-color: #f5f7fa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
     color: #333;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 .navbar {
-    background-color: #0b5ed7;
+    background: linear-gradient(90deg, #0b5ed7, #003f88);
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
 }
 
 .logo {
-    color: #fff;
+    color: white;
     font-size: 22px;
     font-weight: bold;
 }
@@ -35,68 +35,88 @@ body {
     color: white;
     text-decoration: none;
     font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255,255,255,0.2);
 }
 
-/* Hero section */
-.hero {
-    background: linear-gradient(to right, #0b5ed7, #198754);
+/* ===== HERO SECTION ===== */
+.hero-large {
+    background: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e") center/cover;
+    padding: 100px 40px;
     color: white;
-    padding: 80px 40px;
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 36px;
+.hero-large h1 {
+    font-size: 42px;
     margin-bottom: 10px;
 }
 
-.hero p {
+.hero-large p {
     font-size: 18px;
-}
-
-/* Content */
-.content {
-    padding: 40px;
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
 }
 
-.content h2 {
-    margin-bottom: 15px;
-    color: #0b5ed7;
-}
-
-/* Footer */
-.footer {
-    background-color: #212529;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
-/* ===== ACTIVE MENU ===== */
-.nav-links a.active {
-    border-bottom: 2px solid #fff;
-    padding-bottom: 3px;
-}
-
-/* ===== CARD IMPROVEMENTS ===== */
-.card {
-    background: #ffffff;
+/* ===== CONTENT ===== */
+.content {
+    max-width: 1000px;
+    margin: 40px auto;
     padding: 20px;
-    margin-top: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ===== BUTTON IMPROVEMENT ===== */
+.content h2 {
+    font-size: 30px;
+    color: #0b5ed7;
+    margin-bottom: 15px;
+}
+
+.content h3 {
+    margin-top: 25px;
+    color: #003f88;
+}
+
+.content p {
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.content ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 8px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== INPUT & BUTTON ===== */
+input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 button {
-    padding: 8px 15px;
-    background-color: #0b5ed7;
+    padding: 10px 18px;
+    margin-left: 10px;
+    background: #0b5ed7;
     color: white;
     border: none;
     border-radius: 5px;
@@ -104,54 +124,14 @@ button {
 }
 
 button:hover {
-    background-color: #084298;
+    background: #003f88;
 }
 
-/* ===== INPUT ===== */
-input {
-    padding: 8px;
-    width: 65%;
-    margin-bottom: 10px;
-}
-
-/* ===== CONTENT SPACING ===== */
-.content h3 {
-    margin-top: 20px;
-}
-/* Big hero section */
-.hero-large {
-    background-color: #f0f8ff;
-    padding: 50px 30px;
+/* ===== FOOTER ===== */
+.footer {
+    background: #003f88;
+    color: white;
     text-align: center;
-    border-bottom: 3px solid #0b5ed7;
+    padding: 15px;
+    margin-top: 50px;
 }
-
-.hero-large h1 {
-    font-size: 32px;
-    color: #0b3d91;
-    margin-bottom: 10px;
-}
-
-.hero-large p {
-    font-size: 18px;
-    color: #333;
-}
-
-/* Larger content spacing */
-.content h2,
-.content h3 {
-    margin-top: 25px;
-    color: #0b5ed7;
-}
-
-.content p,
-.content ul {
-    margin-top: 12px;
-    line-height: 1.6;
-}
-
-.content ul li {
-    margin-bottom: 8px;
-}
-
-
